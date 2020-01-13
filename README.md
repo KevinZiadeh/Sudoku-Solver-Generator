@@ -1,5 +1,5 @@
 # Sudoku-Solver-Generator
-Inspired by https://github.com/techwithtim
+Inspired by https://github.com/techwithtim/Sudoku-GUI-Solver and https://github.com/uraza/kivy-sudoku-app
 
 Created a sudoku solver using python inspired by the above user,  then diverted and created a generator and a GUI to both create games and solve existing ones.
 

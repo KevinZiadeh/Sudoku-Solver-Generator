@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-This is an example script.
+Created on Sun Jan 12 21:05:49 2020
 
-It seems that it has to have THIS docstring with a summary line, a blank line
-and sume more text like here. Wow.
+@author: Kevin
 """
 
 def solve(board):
@@ -11,19 +10,19 @@ def solve(board):
         return True
     else:
         y, x = find_empty(board)
-    
+
         for i in range(1,10):
             if check_valid(board, y, x, i):
                 board[y][x] = i
-                
-        
+
+
                 if solve(board):
                     return True
-                
+
                 board[y][x] = 0
-                
+
         return False
-            
+
 
 #check if there are any empty cases, if not finish
 def find_empty(board):
@@ -61,7 +60,6 @@ def check_valid(board, y, x, element = 0):
 
 #print the board in a sudoku format
 def print_board(board):
-    solve(board)
     print("--------------------------")
     for m in range(len(board)):
         print("| ", end = '')
@@ -100,4 +98,5 @@ board = [
 
 
 if __name__ == '__main__':
+    solve(board)
     print_board(board)

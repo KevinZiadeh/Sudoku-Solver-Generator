@@ -114,11 +114,11 @@ def get_solved(board):
                 continue
             elif not check_valid(board, i, j):
                 return False
-                solve(board)
-                if type(board) == bool:
-                    return False
-                else:
-                    return board
-                
+    solve(board)
+    if type(board) == bool:
+        return False
+    else:
+        return board
+
 if __name__ == '__main__':
     print(main(board))

@@ -9,10 +9,7 @@ import random
 import main as solver
 import copy
 
-def main():
-    difficulty = 5-int(input("Select difficulty: Very Easy (0), Easy (1), Medium(2), Hard(3), Insane(4)"))
-    assert difficulty > 0 and difficulty <= 5, "Invalid entry"
-
+def generate(difficulty):
     board = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -58,10 +55,16 @@ def main():
             cst2 += 1
 
     return board
+
+def main():
+    difficulty = 5-int(input("Select difficulty: Very Easy (0), Easy (1), Medium(2), Hard(3), Insane(4)"))
+    assert difficulty > 0 and difficulty <= 5, "Invalid entry"
+
+    return generate(difficulty)
+
 if __name__ == "__main__":
     board = main()
     if type(board) == bool:
         print("Generating failed")
     else:
         solver.print_board(board)
-    solver.print_board(board)

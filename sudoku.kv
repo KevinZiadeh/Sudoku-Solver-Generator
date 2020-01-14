@@ -21,6 +21,14 @@
           Rectangle:
             pos: self.pos
             size: self.size
+        Button:
+          id: check_button
+          text: " C \n H \n E \n C \n K"
+          background_normal: ''
+          background_color: (0.65,0.58,0.19,1)
+          background_down: '#FFFFFF' #arbitrary value
+          on_release:
+            root.check_board()
       BoxLayout:
         orientation: "vertical"
         size: root.size
@@ -117,7 +125,8 @@
   halign: 'center'
   font_size: 18
   cursor_color: [0, 0, 0, 0]
-  edit: True
+  readonly: False
+  on_text_validate: validation()
 
 <SudokuSolve>:
   GridLayout:

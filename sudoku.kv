@@ -4,261 +4,6 @@
   GridLayout:
     canvas:
       Color:
-        rgba: 0.23, 0.23, 0.23, 1
-      Rectangle:
-        pos: self.pos
-        size: self.size
-    cols: 1
-    rows: 2
-    GridLayout:
-      cols: 3
-      BoxLayout:
-        size_hint_x: None
-        width: 30
-        canvas:
-          Color:
-            rgba: (0.65,0.58,0.19,1)
-          Rectangle:
-            pos: self.pos
-            size: self.size
-      GridLayout:
-        cols: 3
-        rows: 3
-        spacing: 3, 4
-        GridLayout:
-          cols: 3
-          rows: 3
-          Button:
-            text: "1"
-          Button:
-            text: "2"
-          Button:
-            text: "3"
-          Button:
-            text: "4"
-          Button:
-            text: "5"
-          Button:
-            text: "6"
-          Button:
-            text: "7"
-          Button:
-            text: "8"
-          Button:
-            text: "9"
-        GridLayout:
-          cols: 3
-          rows: 3
-          Button:
-            text: "1"
-          Button:
-            text: "2"
-          Button:
-            text: "3"
-          Button:
-            text: "4"
-          Button:
-            text: "5"
-          Button:
-            text: "6"
-          Button:
-            text: "7"
-          Button:
-            text: "8"
-          Button:
-            text: "9"
-        GridLayout:
-          cols: 3
-          rows: 3
-          Button:
-            text: "1"
-          Button:
-            text: "2"
-          Button:
-            text: "3"
-          Button:
-            text: "4"
-          Button:
-            text: "5"
-          Button:
-            text: "6"
-          Button:
-            text: "7"
-          Button:
-            text: "8"
-          Button:
-            text: "9"
-        GridLayout:
-          cols: 3
-          rows: 3
-          Button:
-            text: "1"
-          Button:
-            text: "2"
-          Button:
-            text: "3"
-          Button:
-            text: "4"
-          Button:
-            text: "5"
-          Button:
-            text: "6"
-          Button:
-            text: "7"
-          Button:
-            text: "8"
-          Button:
-            text: "9"
-        GridLayout:
-          cols: 3
-          rows: 3
-          Button:
-            text: "1"
-          Button:
-            text: "2"
-          Button:
-            text: "3"
-          Button:
-            text: "4"
-          Button:
-            text: "5"
-          Button:
-            text: "6"
-          Button:
-            text: "7"
-          Button:
-            text: "8"
-          Button:
-            text: "9"
-        GridLayout:
-          cols: 3
-          rows: 3
-          Button:
-            text: "1"
-          Button:
-            text: "2"
-          Button:
-            text: "3"
-          Button:
-            text: "4"
-          Button:
-            text: "5"
-          Button:
-            text: "6"
-          Button:
-            text: "7"
-          Button:
-            text: "8"
-          Button:
-            text: "9"
-        GridLayout:
-          cols: 3
-          rows: 3
-          Button:
-            text: "1"
-          Button:
-            text: "2"
-          Button:
-            text: "3"
-          Button:
-            text: "4"
-          Button:
-            text: "5"
-          Button:
-            text: "6"
-          Button:
-            text: "7"
-          Button:
-            text: "8"
-          Button:
-            text: "9"
-        GridLayout:
-          cols: 3
-          rows: 3
-          Button:
-            text: "1"
-          Button:
-            text: "2"
-          Button:
-            text: "3"
-          Button:
-            text: "4"
-          Button:
-            text: "5"
-          Button:
-            text: "6"
-          Button:
-            text: "7"
-          Button:
-            text: "8"
-          Button:
-            text: "9"
-        GridLayout:
-          cols: 3
-          rows: 3
-          Button:
-            text: "1"
-          Button:
-            text: "2"
-          Button:
-            text: "3"
-          Button:
-            text: "4"
-          Button:
-            text: "5"
-          Button:
-            text: "6"
-          Button:
-            text: "7"
-          Button:
-            text: "8"
-          Button:
-            text: "9"
-      BoxLayout:
-        id: left_bar
-        size_hint_x: None
-        width: 30
-        canvas:
-          Color:
-            rgba:  (0.65,0.58,0.19,1)
-          Rectangle:
-            pos: self.pos
-            size: self.size
-
-    BoxLayout:
-      size_hint_y: None
-      height: 60
-      Button:
-        id: return_button
-        font_size: 20
-        text: "Return"
-        background_normal: ''
-        background_color: (0.65,0.58,0.19,1)
-        background_down: '#FFFFFF' #arbitrary value
-        on_press:
-          return_button.background_color= (0.455,0.406,0.133,1)
-        on_release:
-          return_button.background_color= (0.65,0.58,0.19,1)
-          root.manager.transition.direction = 'up'
-          root.manager.current = 'select'
-
-
-<SudokuCell>:
-  text: ""
-  padding: 0.3 * self.width, (self.height - self.line_height) / 2
-  input_filter: lambda text, from_undo: text if ( text.isdigit() and len(self.text) == 0 and 0 < int(text) < 10 ) else ""
-  multiline: False
-  background_color: 0.23, 0.23, 0.23, 1
-  foreground_color: 0.93, 0.93, 0.93, 1
-  halign: 'center'
-  font_size: 18
-  cursor_color: [0, 0, 0, 0]
-  edit: True
-
-<SudokuSolve>:
-  GridLayout:
-    canvas:
-      Color:
         rgba: 0.43, 0.43, 0.43, 1
       Rectangle:
         pos: self.pos
@@ -268,6 +13,7 @@
     GridLayout:
       cols: 3
       BoxLayout:
+        id: left_bar
         size_hint: 0.05, 1
         canvas:
           Color:
@@ -301,6 +47,126 @@
               pos: self.x, self.y  + 2 * self.height / 3 - self.line_size / 2
               size: self.width, self.line_size
       BoxLayout:
+        id: right_bar
+        size_hint: 0.05, 1
+        canvas:
+          Color:
+            rgba: (0.65,0.58,0.19,1)
+          Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+      orientation: "horizontal"
+      size_hint: 1, 0.1
+      GridLayout:
+        cols: 5
+        Button:
+          id: easy
+          size_hint: 0.25, 1
+          text: "Easy"
+          background_normal: ''
+          background_color: 0.23, 0.23, 0.23, 1
+          on_release: root.generate(1)
+        Button:
+          id: medium
+          size_hint: 0.25, 1
+          text: "Medium"
+          background_normal: ''
+          background_color: 0.23, 0.23, 0.23, 1
+          on_release: root.generate(2)
+        Button:
+          id: return_button
+          font_size: 20
+          text: "Return"
+          background_normal: ''
+          background_color: (0.65,0.58,0.19,1)
+          background_down: '#FFFFFF' #arbitrary value
+          on_press:
+            return_button.background_color= (0.455,0.406,0.133,1)
+            root.ids["left_bar"].canvas.children[0].rgba = (0.455,0.406,0.133,1)
+            root.ids["right_bar"].canvas.children[0].rgba = (0.455,0.406,0.133,1)
+          on_release:
+            return_button.background_color= (0.65,0.58,0.19,1)
+            root.manager.transition.direction = 'up'
+            root.manager.current = 'select'
+            root.ids["left_bar"].canvas.children[0].rgba = (0.65,0.58,0.19,1)
+            root.ids["right_bar"].canvas.children[0].rgba = (0.65,0.58,0.19,1)
+        Button:
+          id: hard
+          size_hint: 0.25, 1
+          text: "Hard"
+          background_normal: ''
+          background_color: 0.23, 0.23, 0.23, 1
+          on_release: root.generate(3)
+        Button:
+          id: insane
+          size_hint: 0.25, 1
+          text: "Insane"
+          background_normal: ''
+          background_color: 0.23, 0.23, 0.23, 1
+          on_release: root.generate(4)
+
+
+<SudokuCell>:
+  text: ""
+  padding: 0.3 * self.width, (self.height - self.line_height) / 2
+  input_filter: lambda text, from_undo: text if ( text.isdigit() and len(self.text) == 0 and 0 < int(text) < 10 ) else ""
+  multiline: False
+  background_color: 0.23, 0.23, 0.23, 1
+  foreground_color: 0.93, 0.93, 0.93, 1
+  halign: 'center'
+  font_size: 18
+  cursor_color: [0, 0, 0, 0]
+  edit: True
+
+<SudokuSolve>:
+  GridLayout:
+    canvas:
+      Color:
+        rgba: 0.43, 0.43, 0.43, 1
+      Rectangle:
+        pos: self.pos
+        size: self.size
+    cols: 1
+    rows: 2
+    GridLayout:
+      cols: 3
+      BoxLayout:
+        id: left_bar
+        size_hint: 0.05, 1
+        canvas:
+          Color:
+            rgba: (0.65,0.58,0.19,1)
+          Rectangle:
+            pos: self.pos
+            size: self.size
+      BoxLayout:
+        orientation: "vertical"
+        size: root.size
+        GridLayout:
+          id: grid
+          rows: 9
+          cols: 9
+          line_size: 10
+          spacing: 2, 2
+          padding_color: 1,1,1,1
+          canvas:
+            Color:
+              rgb: 0.65,0.58,0.19
+            Rectangle:
+              pos: self.x + self.width / 3 - self.line_size / 2, self.y
+              size: self.line_size, self.height
+            Rectangle:
+              pos: self.x + 2 * self.width / 3 - self.line_size / 2, self.y
+              size: self.line_size, self.height
+            Rectangle:
+              pos: self.x, self.y  + self.height / 3 - self.line_size / 2
+              size: self.width, self.line_size
+            Rectangle:
+              pos: self.x, self.y  + 2 * self.height / 3 - self.line_size / 2
+              size: self.width, self.line_size
+      BoxLayout:
+        id: right_bar
         size_hint: 0.05, 1
         canvas:
           Color:
@@ -321,8 +187,11 @@
         on_press:
           root.solve()
           solve_button.background_color= (0.455,0.406,0.133,1)
+          root.ids["left_bar"].canvas.children[0].rgba = (0.455,0.406,0.133,1)
         on_release:
           solve_button.background_color= (0.65,0.58,0.19,1)
+          root.ids["left_bar"].canvas.children[0].rgba = (0.65,0.58,0.19,1)
+
       Button:
         id: return_button
         font_size: 18
@@ -346,8 +215,11 @@
         on_press:
           root.clear()
           clear_button.background_color= (0.455,0.406,0.133,1)
+          root.ids["right_bar"].canvas.children[0].rgba = (0.455,0.406,0.133,1)
         on_release:
           clear_button.background_color= (0.65,0.58,0.19,1)
+          root.ids["right_bar"].canvas.children[0].rgba = (0.65,0.58,0.19,1)
+
 
 <Select>:
   BoxLayout:
@@ -364,7 +236,7 @@
         play_button.background_color= (0.95,0.58,0.19,1)
         root.manager.transition.direction = 'left'
         root.manager.current = 'game'
-
+        root.manager.current_screen.message.open()
     Button:
       id: solve_button
       font_size: 30

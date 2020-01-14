@@ -11,6 +11,7 @@ from kivy.lang import Builder
 import main as solver
 import generator as generate
 import time
+import re
 
 Builder.load_file('./sudoku.kv')
 
@@ -55,12 +56,23 @@ class SudokuGame(Screen):
         text  = self.text_inputs[9 * row + col].text
         return int(text) if len(text) > 0 else 0
 
-    # def validation():
-    #     row, col: get_position()
-    #     values = [[self.get_value(row, col) for col in range(9)] for row in range(9)]
-    #     valid = solver.check_valid(values, row, col)
-    #     if valid == False:
-    #         self.text_inputs[9*row + col].background_color = 0.93, 0.23, 0.23, 1
+    def get_position(self, list, element):
+        list = [str(string) for string in list]
+        match = re.search("<__main(.*?)>", element)
+        index = 80-list.index(match.group())
+        return index//9, index%9
+
+    def validation(self, list, element):
+        print("here")
+        print(self, type(self))
+        y, x = self.get_position(list, element)
+        values = [[self.get_value(row, col) for col in range(9)] for row in range(9)]
+        valid = solver.check_valid(values, y, x)
+        if valid == False:
+            self.text_inputs[9*y + x].background_color = 0.93, 0.23, 0.23, 1
+        else:
+            self.text_inputs[9*y + x].background_color = 0.23, 0.23, 0.23, 1
+
 
     def check_board(self):
         values = [[self.get_value(row, col) for col in range(9)] for row in range(9)]

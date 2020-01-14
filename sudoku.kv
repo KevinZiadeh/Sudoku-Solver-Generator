@@ -126,7 +126,8 @@
   font_size: 18
   cursor_color: [0, 0, 0, 0]
   readonly: False
-  on_text_validate: validation()
+  on_text_validate:
+    root.parent.parent.parent.parent.parent.validation(root.parent.children, str(root.cursor_index))
 
 <SudokuSolve>:
   GridLayout:

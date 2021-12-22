@@ -1,8 +1,35 @@
 # Sudoku-Solver-Generator
-Inspired by https://github.com/techwithtim/Sudoku-GUI-Solver and https://github.com/uraza/kivy-sudoku-app
+> Sudoku solver and generator using python inspired by the above user with a GUI.
 
-Created a sudoku solver using python inspired by the above user,  then diverted and created a generator and a GUI to both create games and solve existing ones.
+## Requirements
+  To be able to run this program, the following is needed
+```
+* Python 3.7 or BELOW.
+* Kivy 1.11.1
+```
 
-Make sure you  have kivy downloaded and run "./python gui.py" in the terminal
+## Overview
+This project consists of implementing a sudoku solver that can solve any given sudoku, and it can generate a random valid sudoku depending on specified difficulty.
 
-Generating Sudoku board sometimes crashes program, wait a little bit or press Ctrl+C in terminal
+## Usage
+```
+$ git clone https://github.com/KevinZiadeh/Sudoku-Solver-Generator.git
+$ cd Sudoku-Solver-Generator
+$ pip install -r requirements.txt
+```
+
+## Run
+In order to run this application, make sure you have the correct python and kivy version installed then run
+```
+$ python gui.py
+```
+
+![](res/1.PNG?raw=true)
+---
+![](res/2.PNG?raw=true)
+---
+![](res/3.PNG?raw=true)
+---
+![](res/4.PNG?raw=true)
+---
+![](res/5.PNG?raw=true)

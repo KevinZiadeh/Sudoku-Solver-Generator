@@ -1,5 +1,5 @@
 # Sudoku-Solver-Generator
-> Sudoku solver and generator using python inspired by the above user with a GUI.
+> Sudoku solver and generator using python with a GUI.
 
 ## Requirements
   To be able to run this program, the following is needed
